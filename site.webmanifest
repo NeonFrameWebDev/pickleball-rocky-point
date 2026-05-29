@@ -1,0 +1,13 @@
+{
+  "name": "Pickleball Rocky Point",
+  "short_name": "Pickleball RP",
+  "description": "Pickleball courts in Puerto Penasco (Rocky Point), Sonora, Mexico. 4 courts plus volleyball, 200 pesos per player, all day.",
+  "start_url": "/pickleball-rocky-point/",
+  "display": "standalone",
+  "background_color": "#143D24",
+  "theme_color": "#1E5C34",
+  "icons": [
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

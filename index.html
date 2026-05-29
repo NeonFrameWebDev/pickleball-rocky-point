@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1E5C34">
+
+<!-- Primary title/description. data-en/data-es lets the JS toggle swap these live. -->
+<title data-en="Pickleball Rocky Point | 4 Courts, 200 Pesos, All Day in Puerto Penasco" data-es="Pickleball Rocky Point | 4 Canchas, 200 Pesos, Todo el Día en Puerto Peñasco">Pickleball Rocky Point | 4 Courts, 200 Pesos, All Day in Puerto Penasco</title>
+<meta name="description" id="metaDescription" content="Pickleball courts in Puerto Penasco (Rocky Point). 4 courts plus a volleyball court. Pay 200 pesos per player and play all day, day or night under the lights. Just show up, no booking.">
+<meta name="keywords" content="pickleball Rocky Point, pickleball Puerto Penasco, pickleball courts Rocky Point Mexico, where to play pickleball Rocky Point, canchas de pickleball Puerto Penasco, donde jugar pickleball Puerto Penasco, pickleball Sonora">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Pickleball Rocky Point">
+<meta name="geo.region" content="MX-SON">
+<meta name="geo.placename" content="Puerto Penasco, Sonora">
+
+<link rel="canonical" href="https://neonframewebdev.github.io/pickleball-rocky-point/">
+<link rel="alternate" hreflang="en" href="https://neonframewebdev.github.io/pickleball-rocky-point/">
+<link rel="alternate" hreflang="es" href="https://neonframewebdev.github.io/pickleball-rocky-point/?lang=es">
+<link rel="alternate" hreflang="x-default" href="https://neonframewebdev.github.io/pickleball-rocky-point/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="business.business">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_MX">
+<meta property="og:title" content="Pickleball Rocky Point | 4 Courts, 200 Pesos, All Day">
+<meta property="og:description" content="Four pickleball courts plus volleyball in Puerto Penasco. Pay 200 pesos per player, play all day or under the lights at night. Just show up.">
+<meta property="og:image" content="https://neonframewebdev.github.io/pickleball-rocky-point/assets/og-image.jpg">
+<meta property="og:image:alt" content="Pickleball Rocky Point courts under the shade sails with the octopus mural, Puerto Penasco">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:url" content="https://neonframewebdev.github.io/pickleball-rocky-point/">
+<meta property="og:site_name" content="Pickleball Rocky Point">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pickleball Rocky Point | 4 Courts, 200 Pesos, All Day">
+<meta name="twitter:description" content="Four pickleball courts plus volleyball in Puerto Penasco. Pay 200 pesos per player, play all day or under the lights at night.">
+<meta name="twitter:image" content="https://neonframewebdev.github.io/pickleball-rocky-point/assets/og-image.jpg">
+<meta name="twitter:image:alt" content="Pickleball Rocky Point courts, Puerto Penasco Rocky Point">
+
+<!-- Icons -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Preload the hero (responsive crops), fetchpriority high. -->
+<link rel="preload" as="image" href="assets/hero_sm.webp" fetchpriority="high" type="image/webp" media="(max-width: 767px)">
+<link rel="preload" as="image" href="assets/hero_md.webp" fetchpriority="high" type="image/webp" media="(min-width: 768px) and (max-width: 1399px)">
+<link rel="preload" as="image" href="assets/hero_lg.webp" fetchpriority="high" type="image/webp" media="(min-width: 1400px)">
+
+<!-- Fonts: single request, display=swap, preconnect + print-swap trick so fonts never block render -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@600;700&family=Inter:wght@400;500;600&display=swap"></noscript>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<a class="skip" href="#main" data-en="Skip to content" data-es="Saltar al contenido">Skip to content</a>
+
+<!-- ===================== Loader (once per session) ===================== -->
+<div class="loader" id="loader" aria-hidden="true">
+  <img class="loader__logo" src="assets/logo.webp" width="560" height="501" alt="">
+  <hr class="court-line loader__stripe">
+  <div class="loader__track"><div class="loader__bar"></div></div>
+  <div class="loader__meta" data-en="Warming up" data-es="Calentando">Warming up</div>
+</div>
+
+<div class="progress-top" id="progressTop"></div>
+
+<!-- ===================== Nav ===================== -->
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="#top" aria-label="Pickleball Rocky Point, home">
+      <img class="nav__logo" src="assets/logo.webp" width="560" height="501" alt="Pickleball Rocky Point logo" fetchpriority="high">
+    </a>
+    <div class="nav__right">
+      <ul class="nav__links">
+        <li><a href="#how" data-en="How It Works" data-es="Cómo Funciona">How It Works</a></li>
+        <li><a href="#courts" data-en="The Courts" data-es="Las Canchas">The Courts</a></li>
+        <li><a href="#pricing" data-en="Pricing" data-es="Precio">Pricing</a></li>
+        <li><a href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a></li>
+        <li><a href="#visit" data-en="Visit" data-es="Visítanos">Visit</a></li>
+        <li><a href="#faq" data-en="FAQ" data-es="Preguntas">FAQ</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="is-active" aria-pressed="true">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a class="btn btn--orange nav__cta" href="#visit" data-en="Get Directions" data-es="Cómo Llegar">Get Directions</a>
+      <button class="nav__menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span class="nav__menu-btn__bars" aria-hidden="true"><span></span><span></span></span>
+        <span data-en="Menu" data-es="Menú">Menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Full-screen mobile menu -->
+<aside class="menu" id="menu" aria-label="Site menu">
+  <div class="menu__top">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="en" class="is-active" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <button class="menu__close" id="menuClose" data-en="Close" data-es="Cerrar">Close</button>
+  </div>
+  <nav class="menu__links" aria-label="Mobile">
+    <a href="#how" data-en="How It Works" data-es="Cómo Funciona">How It Works</a>
+    <a href="#courts" data-en="The Courts" data-es="Las Canchas">The Courts</a>
+    <a href="#pricing" data-en="Pricing" data-es="Precio">Pricing</a>
+    <a href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a>
+    <a href="#visit" data-en="Visit" data-es="Visítanos">Visit</a>
+    <a href="#faq" data-en="FAQ" data-es="Preguntas">FAQ</a>
+  </nav>
+  <div class="menu__cta">
+    <a class="btn btn--orange" href="#visit" data-en="Get Directions" data-es="Cómo Llegar">Get Directions</a>
+  </div>
+</aside>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ===================== Hero ===================== -->
+<header class="hero" id="hero">
+  <!-- HERO PHOTO SWAP POINT: real wide shot of the courts under the shade sails with the octopus mural (IMG_0281). -->
+  <div class="hero__media" aria-hidden="true">
+    <picture>
+      <source srcset="assets/hero_sm.webp" media="(max-width: 767px)" type="image/webp" width="1080" height="810">
+      <source srcset="assets/hero_md.webp" media="(max-width: 1399px)" type="image/webp" width="1280" height="960">
+      <source srcset="assets/hero_lg.webp" media="(min-width: 1400px)" type="image/webp" width="1920" height="1440">
+      <img src="assets/hero_md.webp" alt="" width="1280" height="960" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <div class="hero__vignette" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <p class="hero__kicker hand pop" data-en="4 courts. 200 pesos. All day." data-es="4 canchas. 200 pesos. Todo el día.">4 courts. 200 pesos. All day.</p>
+    <h1 class="hero__title hero__rise">
+      <span data-en="Pickleball in paradise." data-es="Pickleball en el paraíso.">Pickleball in paradise.</span><br>
+      <span class="accent" data-en="Pop. Rally. Repeat." data-es="Pega, pelotea, repite.">Pop. Rally. Repeat.</span>
+    </h1>
+    <p class="hero__sub hero__rise" data-en="Four pickleball courts plus volleyball, steps from the Sea of Cortez. Pay 200 pesos per player and play all day, or under the lights at night. Just show up." data-es="Cuatro canchas de pickleball y una de voleibol, a unos pasos del Mar de Cortés. Paga 200 pesos por persona y juega todo el día, o de noche con luces. Solo llega.">Four pickleball courts plus volleyball, steps from the Sea of Cortez. Pay 200 pesos per player and play all day, or under the lights at night. Just show up.</p>
+    <div class="hero__ctas hero__rise">
+      <a class="btn btn--orange" href="#visit" data-en="Get Directions" data-es="Cómo Llegar">Get Directions <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+      <a class="btn btn--ghost" href="#courts" data-en="See the courts" data-es="Ver las canchas">See the courts</a>
+    </div>
+    <p class="hero__meta hero__rise">
+      <span data-en="Puerto Penasco / Rocky Point" data-es="Puerto Peñasco / Rocky Point">Puerto Penasco / Rocky Point</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>Sonora, MX</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span data-en="Open daily, day and night" data-es="Abierto diario, día y noche">Open daily, day and night</span>
+    </p>
+  </div>
+
+  <div class="hero__scrollcue" aria-hidden="true">
+    <span data-en="Scroll" data-es="Desliza">Scroll</span>
+    <span class="ball"></span>
+  </div>
+</header>
+
+<!-- ===================== Marquee ===================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span class="marquee__item">POP</span><span class="marquee__sep">/</span>
+    <span class="marquee__item">DINK</span><span class="marquee__sep">/</span>
+    <span class="marquee__item">KITCHEN</span><span class="marquee__sep">/</span>
+    <span class="marquee__item">200 PESOS</span><span class="marquee__sep">/</span>
+    <span class="marquee__item" data-en="ALL DAY" data-es="TODO EL DÍA">ALL DAY</span><span class="marquee__sep">/</span>
+    <span class="marquee__item" data-en="4 COURTS" data-es="4 CANCHAS">4 COURTS</span><span class="marquee__sep">/</span>
+    <span class="marquee__item">RALLY</span><span class="marquee__sep">/</span>
+  </div>
+</div>
+
+<!-- ===================== 01 Pricing money beat ===================== -->
+<section class="section section--green" id="pricing">
+  <span class="section__num" aria-hidden="true">01</span>
+  <div class="wrap">
+    <div class="section__head rise" style="max-width:none;text-align:center;margin-left:auto;margin-right:auto;">
+      <span class="overline" data-en="One price" data-es="Un precio">One price</span>
+    </div>
+    <div class="price-beat rise">
+      <div class="price-beat__amount"><span class="cur">$</span>200<span class="cur">MXN</span></div>
+      <p class="price-beat__tag" data-en="per player, play all day" data-es="por persona, juega todo el día">per player, play all day</p>
+      <p class="price-beat__sub" data-en="No hourly rates. No tiers. No reservation. Pay once at the courts and play as long as you want, day or night." data-es="Sin tarifas por hora. Sin niveles. Sin reservar. Paga una vez en las canchas y juega todo lo que quieras, de día o de noche.">No hourly rates. No tiers. No reservation. Pay once at the courts and play as long as you want, day or night.</p>
+    </div>
+    <div class="stat-grid rise">
+      <div class="stat">
+        <span class="stat__num">4<span class="o">+1</span></span>
+        <span class="stat__label" data-en="Four pickleball courts, plus a volleyball court." data-es="Cuatro canchas de pickleball, más una de voleibol.">Four pickleball courts, plus a volleyball court.</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">200 <span class="o" style="font-size:0.6em;">MXN</span></span>
+        <span class="stat__label" data-en="Per player. Flat all-day pass, no hourly, no tiers." data-es="Por persona. Pase de día, sin horas, sin niveles.">Per player. Flat all-day pass, no hourly, no tiers.</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num" data-en="DAY + NIGHT" data-es="DÍA Y NOCHE">DAY + NIGHT</span>
+        <span class="stat__label" data-en="Lit courts. Come and go until close." data-es="Canchas con luces. Entra y sal hasta el cierre.">Lit courts. Come and go until close.</span>
+      </div>
+    </div>
+    <div class="section__cta">
+      <a class="btn btn--orange" href="#visit" data-en="Get Directions" data-es="Cómo Llegar">Get Directions <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 02 How It Works / The Kitchen ===================== -->
+<section class="section section--bright" id="how">
+  <span class="section__num" aria-hidden="true">02</span>
+  <div class="wrap">
+    <div class="section__head rise">
+      <span class="overline" data-en="How it works" data-es="Cómo funciona">How it works</span>
+      <h2 data-en="Welcome to the Kitchen." data-es="Bienvenido a la cocina.">Welcome to the Kitchen.</h2>
+      <p class="section__intro" data-en="No app, no account, no booking. The hardest part is leaving. Here is the whole thing." data-es="Sin app, sin cuenta, sin reservar. Lo más difícil es irte. Así de fácil es todo.">No app, no account, no booking. The hardest part is leaving. Here is the whole thing.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step rise">
+        <div class="step__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-10a7 7 0 0114 0c0 4.8-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+        </div>
+        <div>
+          <span class="step__num">01</span>
+          <h3 data-en="Show up" data-es="Llega">Show up</h3>
+          <p data-en="Roll up to the courts in Rocky Point. First come, open play, no reservation needed." data-es="Llega a las canchas en Rocky Point. Por orden de llegada, juego abierto, sin reservar.">Roll up to the courts in Rocky Point. First come, open play, no reservation needed.</p>
+        </div>
+      </div>
+      <div class="step rise">
+        <div class="step__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.2 9.2h4.3a1.8 1.8 0 010 3.6H9.5h4a1.8 1.8 0 010 3.6H9.2"/></svg>
+        </div>
+        <div>
+          <span class="step__num">02</span>
+          <h3 data-en="Pay 200 pesos" data-es="Paga 200 pesos">Pay 200 pesos</h3>
+          <p data-en="One flat day pass, per player. That is it. Play all day on any open court." data-es="Un solo pase de día, por persona. Eso es todo. Juega todo el día en cualquier cancha libre.">One flat day pass, per player. That is it. Play all day on any open court.</p>
+        </div>
+      </div>
+      <div class="step rise">
+        <div class="step__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 13l3-3 4 4 6-7 3 3"/><circle cx="12" cy="18" r="1.3"/></svg>
+        </div>
+        <div>
+          <span class="step__num">03</span>
+          <h3 data-en="Play all day" data-es="Juega todo el día">Play all day</h3>
+          <p data-en="Four courts, open play, until we close. Stay for the sunset and play under the lights." data-es="Cuatro canchas, juego abierto, hasta cerrar. Quédate para el atardecer y juega con luces.">Four courts, open play, until we close. Stay for the sunset and play under the lights.</p>
+        </div>
+      </div>
+    </div>
+    <p class="steps__note rise" data-en="Bring your own paddle and ball. No rentals on site." data-es="Trae tu propia pala y pelota. No hay renta en el lugar.">Bring your own paddle and ball. No rentals on site.</p>
+  </div>
+  <div class="divider" aria-hidden="true"><span class="court-line"></span></div>
+</section>
+
+<!-- ===================== 03 The Courts ===================== -->
+<section class="section section--bright" id="courts">
+  <span class="section__num" aria-hidden="true">03</span>
+  <div class="wrap">
+    <div class="section__head rise">
+      <span class="overline" data-en="The courts" data-es="Las canchas">The courts</span>
+      <h2 data-en="Four courts. One sunset." data-es="Cuatro canchas. Un atardecer.">Four courts. One sunset.</h2>
+      <p class="section__intro" data-en="Blue acrylic courts with crisp white lines and regulation nets, shaded by big sails and lit for night play. Plus a volleyball court when you want to switch it up." data-es="Canchas de acrílico azul con líneas blancas y redes reglamentarias, bajo grandes sombras y con luces para jugar de noche. Más una cancha de voleibol para variarle.">Blue acrylic courts with crisp white lines and regulation nets, shaded by big sails and lit for night play. Plus a volleyball court when you want to switch it up.</p>
+    </div>
+
+    <div class="why__layout rise">
+      <div class="why__photo graded">
+        <img src="assets/courts_wide.webp" width="1280" height="960" loading="lazy" decoding="async" alt="Four blue pickleball courts with green aprons under green shade sails at Pickleball Rocky Point">
+        <span class="cap hand" data-en="four courts, ready to rally" data-es="cuatro canchas, listas para pelotear">four courts, ready to rally</span>
+      </div>
+      <div class="why__copy">
+        <h3 data-en="Built to play." data-es="Hechas para jugar.">Built to play.</h3>
+        <ul class="why__list">
+          <li data-en="Four dedicated pickleball courts, blue acrylic with regulation nets." data-es="Cuatro canchas de pickleball, acrílico azul con redes reglamentarias.">Four dedicated pickleball courts, blue acrylic with regulation nets.</li>
+          <li data-en="Big shade sails overhead so you are out of the midday sun." data-es="Grandes sombras arriba para que no te pegue el sol del mediodía.">Big shade sails overhead so you are out of the midday sun.</li>
+          <li data-en="Floodlights on every court for play after dark." data-es="Reflectores en cada cancha para jugar de noche.">Floodlights on every court for play after dark.</li>
+          <li data-en="Open play, all welcome, locals and visitors alike." data-es="Juego abierto, todos bienvenidos, locales y visitantes.">Open play, all welcome, locals and visitors alike.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="why__layout why__layout--reverse rise">
+      <div class="why__photo graded">
+        <img src="assets/court_mural.webp" width="1280" height="960" loading="lazy" decoding="async" alt="A single pickleball court with the white octopus mural on the deep blue wall behind it">
+        <span class="cap hand" data-en="the octopus wall" data-es="la pared del pulpo">the octopus wall</span>
+      </div>
+      <div class="why__copy">
+        <h3 data-en="Only-in-Rocky-Point character." data-es="Carácter solo de Rocky Point.">Only-in-Rocky-Point character.</h3>
+        <p data-en="A hand-painted octopus mural runs the back wall, palms line the fences, and the Sea of Cortez light does the rest. Play your best 6 PM game of the trip, then keep going under the lights." data-es="Un mural pintado a mano del pulpo recorre la pared, las palmas bordean las rejas y la luz del Mar de Cortés hace el resto. Juega tu mejor partido de las 6 PM del viaje y sigue con las luces encendidas.">A hand-painted octopus mural runs the back wall, palms line the fences, and the Sea of Cortez light does the rest. Play your best 6 PM game of the trip, then keep going under the lights.</p>
+      </div>
+    </div>
+
+    <div class="why__layout rise">
+      <div class="why__photo graded">
+        <!-- TODO: a dedicated volleyball-court photo would be ideal here; using the wide spot shot for now. -->
+        <img src="assets/the_spot.webp" width="1280" height="960" loading="lazy" decoding="async" alt="Wide view of the Pickleball Rocky Point facility with courts, shade, and the clubhouse">
+        <span class="cap hand" data-en="and a volleyball court" data-es="y una cancha de voleibol">and a volleyball court</span>
+      </div>
+      <div class="why__copy">
+        <h3 data-en="Bring a crew." data-es="Trae a la banda.">Bring a crew.</h3>
+        <p data-en="There is a volleyball court too, so a big group can rotate between pickleball, volleyball, and the shade. One spot, all afternoon, one flat price." data-es="También hay una cancha de voleibol, así un grupo grande puede rotar entre pickleball, voleibol y la sombra. Un solo lugar, toda la tarde, un solo precio.">There is a volleyball court too, so a big group can rotate between pickleball, volleyball, and the shade. One spot, all afternoon, one flat price.</p>
+        <div style="margin-top:1.2rem;">
+          <a class="btn btn--ghost" href="gallery.html" data-en="See the gallery" data-es="Ver la galería">See the gallery <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="divider" aria-hidden="true"><span class="court-line"></span></div>
+</section>
+
+<!-- ===================== 04 The Hangout ===================== -->
+<section class="section section--cream2" id="hangout">
+  <span class="section__num" aria-hidden="true">04</span>
+  <div class="wrap">
+    <div class="section__head rise">
+      <span class="overline" data-en="The hangout" data-es="El ambiente">The hangout</span>
+      <h2 data-en="Way more than courts." data-es="Mucho más que canchas.">Way more than courts.</h2>
+      <p class="section__intro" data-en="Between games there is shade, seats, cold-drink weather, and stuff to do. It is a hangout, not just a court." data-es="Entre partidos hay sombra, asientos, clima de bebida fría y cosas que hacer. Es un lugar para pasar el rato, no solo una cancha.">Between games there is shade, seats, cold-drink weather, and stuff to do. It is a hangout, not just a court.</p>
+    </div>
+
+    <div class="why__layout rise" style="margin-bottom:clamp(2rem,5vw,3rem);">
+      <div class="why__photo graded">
+        <img src="assets/lounge.webp" width="1280" height="960" loading="lazy" decoding="async" alt="Covered lounge at Pickleball Rocky Point with a foosball table looking out to the courts">
+        <span class="cap hand" data-en="rest, regroup, rematch" data-es="descansa, agrúpate, revancha">rest, regroup, rematch</span>
+      </div>
+      <div class="why__copy">
+        <h3 data-en="A real clubhouse." data-es="Un verdadero club.">A real clubhouse.</h3>
+        <p data-en="A covered pavilion and a shaded indoor lounge with Mexican talavera tile, picnic tables, a foosball table, and a TV. Sit out a game, cool off, and watch the next rally." data-es="Un palapa techada y un salón interior con sombra, azulejo de talavera, mesas, futbolito y una tele. Descansa un partido, refréscate y mira el siguiente peloteo.">A covered pavilion and a shaded indoor lounge with Mexican talavera tile, picnic tables, a foosball table, and a TV. Sit out a game, cool off, and watch the next rally.</p>
+      </div>
+    </div>
+
+    <div class="amenities rise">
+      <div class="amenity">
+        <div class="amenity__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg></div>
+        <span class="amenity__name" data-en="Night play" data-es="Juego nocturno">Night play</span>
+        <span class="amenity__desc" data-en="Every court is lit. Play after the sun goes down." data-es="Cada cancha con luces. Juega después del atardecer.">Every court is lit. Play after the sun goes down.</span>
+      </div>
+      <div class="amenity">
+        <div class="amenity__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 5 0 0118 0z"/><path d="M12 12v8M8 20h8"/></svg></div>
+        <span class="amenity__name" data-en="Shade sails" data-es="Sombras">Shade sails</span>
+        <span class="amenity__desc" data-en="Big sails over the courts keep the midday sun off." data-es="Grandes sombras sobre las canchas para el sol del mediodía.">Big sails over the courts keep the midday sun off.</span>
+      </div>
+      <div class="amenity">
+        <div class="amenity__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
+        <span class="amenity__name" data-en="Covered pavilion" data-es="Palapa techada">Covered pavilion</span>
+        <span class="amenity__desc" data-en="Sit in the shade between games." data-es="Siéntate en la sombra entre partidos.">Sit in the shade between games.</span>
+      </div>
+      <div class="amenity">
+        <div class="amenity__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3v6a5 5 0 0010 0V3"/><path d="M12 14v7M8 21h8"/></svg></div>
+        <span class="amenity__name" data-en="Restrooms" data-es="Baños">Restrooms</span>
+        <span class="amenity__desc" data-en="Clean restrooms on site." data-es="Baños limpios en el lugar.">Clean restrooms on site.</span>
+      </div>
+      <div class="amenity">
+        <div class="amenity__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11h13a3 3 0 010 6h-1"/><path d="M4 11V8a2 2 0 012-2h9a2 2 0 012 2v3"/><path d="M6 17v2M14 17v2"/></svg></div>
+        <span class="amenity__name" data-en="Shaded lounge" data-es="Salón con sombra">Shaded lounge</span>
+        <span class="amenity__desc" data-en="Indoor lounge with talavera tile and tables." data-es="Salón interior con talavera y mesas.">Indoor lounge with talavera tile and tables.</span>
+      </div>
+      <div class="amenity">
+        <div class="amenity__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 6v12M16 6v12M3 12h18"/><circle cx="8" cy="12" r="0.9"/><circle cx="16" cy="12" r="0.9"/></svg></div>
+        <span class="amenity__name" data-en="Foosball" data-es="Futbolito">Foosball</span>
+        <span class="amenity__desc" data-en="Keep the competition going off-court." data-es="Sigue la competencia fuera de la cancha.">Keep the competition going off-court.</span>
+      </div>
+      <div class="amenity">
+        <div class="amenity__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <span class="amenity__name" data-en="Wall TV" data-es="Tele">Wall TV</span>
+        <span class="amenity__desc" data-en="Catch the game from the lounge." data-es="Mira el partido desde el salón.">Catch the game from the lounge.</span>
+      </div>
+      <div class="amenity">
+        <div class="amenity__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 00-5 8M12 3a9 9 0 015 8M5 18a9 9 0 007-7 9 9 0 007 7"/></svg></div>
+        <span class="amenity__name" data-en="Volleyball court" data-es="Cancha de voleibol">Volleyball court</span>
+        <span class="amenity__desc" data-en="Switch it up with a game of volleyball." data-es="Cámbiale con un partido de voleibol.">Switch it up with a game of volleyball.</span>
+      </div>
+      <div class="amenity">
+        <div class="amenity__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 20V8a3 3 0 013-3h3a4 4 0 010 8H9"/></svg></div>
+        <span class="amenity__name" data-en="Parking" data-es="Estacionamiento">Parking</span>
+        <span class="amenity__desc" data-en="Pull right up. Parking on site." data-es="Llega en carro. Estacionamiento en el lugar.">Pull right up. Parking on site.</span>
+      </div>
+    </div>
+  </div>
+  <div class="divider" aria-hidden="true"><span class="court-line"></span></div>
+</section>
+
+<!-- ===================== Gallery teaser ===================== -->
+<section class="section section--bright" id="gallery-teaser">
+  <div class="wrap">
+    <div class="section__head rise">
+      <span class="overline" data-en="Gallery" data-es="Galería">Gallery</span>
+      <h2 data-en="See the spot." data-es="Mira el lugar.">See the spot.</h2>
+    </div>
+    <div class="gallery-teaser rise">
+      <button class="gallery__item graded" type="button" data-full="assets/courts_sails.webp">
+        <img src="assets/courts_sails.webp" width="1280" height="960" loading="lazy" decoding="async" alt="Pickleball courts under the green shade sails with the octopus mural">
+        <span class="cap hand" data-en="game on" data-es="a jugar">game on</span>
+      </button>
+      <button class="gallery__item graded" type="button" data-full="assets/court_mural.webp">
+        <img src="assets/court_mural.webp" width="1280" height="960" loading="lazy" decoding="async" alt="A pickleball court with the octopus mural behind it">
+        <span class="cap hand" data-en="the octopus wall" data-es="la pared del pulpo">the octopus wall</span>
+      </button>
+      <button class="gallery__item graded" type="button" data-full="assets/pavilion.webp">
+        <img src="assets/pavilion.webp" width="1280" height="960" loading="lazy" decoding="async" alt="The covered pavilion with the Pickleball Rocky Point logo and seating">
+        <span class="cap hand" data-en="the clubhouse" data-es="el club">the clubhouse</span>
+      </button>
+      <button class="gallery__item graded" type="button" data-full="assets/lounge.webp">
+        <img src="assets/lounge.webp" width="1280" height="960" loading="lazy" decoding="async" alt="The lounge with a foosball table looking out to the courts">
+        <span class="cap hand" data-en="the hangout" data-es="el ambiente">the hangout</span>
+      </button>
+    </div>
+    <div class="section__cta">
+      <a class="btn btn--green" href="gallery.html" data-en="Open the full gallery" data-es="Ver la galería completa">Open the full gallery <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+  <div class="divider" aria-hidden="true"><span class="court-line"></span></div>
+</section>
+
+<!-- ===================== 05 Visit + Map ===================== -->
+<section class="section section--green" id="visit">
+  <span class="section__num" aria-hidden="true">05</span>
+  <div class="wrap">
+    <div class="section__head rise">
+      <span class="overline" data-en="Visit" data-es="Visítanos">Visit</span>
+      <h2 data-en="Find us in Rocky Point." data-es="Encuéntranos en Rocky Point.">Find us in Rocky Point.</h2>
+    </div>
+    <div class="visit__layout">
+      <div class="visit__info rise">
+        <span class="badge-open"><span class="pulse" aria-hidden="true"></span><span data-en="Open day and night" data-es="Abierto día y noche">Open day and night</span></span>
+
+        <div class="visit-block">
+          <h3 data-en="Hours" data-es="Horario">Hours</h3>
+          <!-- TODO: confirm exact open/close times with the owner. Lights confirm night play. -->
+          <p data-en="Open daily. Courts are lit for night play. Call ahead for exact hours." data-es="Abierto diario. Canchas con luces para jugar de noche. Llama para confirmar horario.">Open daily. Courts are lit for night play. Call ahead for exact hours.</p>
+        </div>
+
+        <div class="visit-block">
+          <h3 data-en="Address" data-es="Dirección">Address</h3>
+          <p class="visit__address">Calle Luis Encinas Johnson 439, Ferrocarrilera, 83555 Puerto Peñasco, Sonora</p>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Pickleball+Rocky+Point+Calle+Luis+Encinas+Johnson+439+Ferrocarrilera+83555+Puerto+Penasco+Sonora" target="_blank" rel="noopener">
+            <span data-en="Open in Google Maps" data-es="Abrir en Google Maps">Open in Google Maps</span> <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+
+        <div class="visit-block">
+          <h3 data-en="Contact" data-es="Contacto">Contact</h3>
+          <!-- TODO: owner phone / WhatsApp / Instagram are TBD; route through the contact form for now. -->
+          <p data-en="Phone and WhatsApp coming soon. Questions? Use the form below and we will get back to you." data-es="Teléfono y WhatsApp próximamente. ¿Dudas? Usa el formulario de abajo y te respondemos.">Phone and WhatsApp coming soon. Questions? Use the form below and we will get back to you.</p>
+          <a class="map-link" href="#contact" data-en="Message us" data-es="Escríbenos">Message us <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+
+      <!-- Live embedded Google Map (keyless output=embed; no Maps API key required).
+           If the owner shares their exact Google Business / Maps share link, swap the src for a pinned place embed. -->
+      <div class="visit__map rise">
+        <iframe class="visit__map-frame"
+                src="https://www.google.com/maps?q=Pickleball+Rocky+Point+Calle+Luis+Encinas+Johnson+439+Ferrocarrilera+83555+Puerto+Penasco+Sonora&output=embed"
+                title="Map to Pickleball Rocky Point in Puerto Penasco"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="visit__map-directions" href="https://www.google.com/maps/dir/?api=1&destination=Pickleball+Rocky+Point+Calle+Luis+Encinas+Johnson+439+Ferrocarrilera+83555+Puerto+Penasco+Sonora" target="_blank" rel="noopener">
+          <span data-en="Get directions" data-es="Cómo llegar">Get directions</span> <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="divider" aria-hidden="true"><span class="court-line"></span></div>
+</section>
+
+<!-- ===================== 06 FAQ ===================== -->
+<section class="section section--bright" id="faq">
+  <span class="section__num" aria-hidden="true">06</span>
+  <div class="wrap">
+    <div class="section__head rise">
+      <span class="overline" data-en="Good to know" data-es="Bueno saber">Good to know</span>
+      <h2 data-en="Questions, answered." data-es="Preguntas, resueltas.">Questions, answered.</h2>
+    </div>
+    <div class="faq rise">
+      <details class="faq__item">
+        <summary class="faq__q" data-en="Do I need to book or reserve?" data-es="¿Necesito reservar?">Do I need to book or reserve?</summary>
+        <div class="faq__a"><p data-en="No. It is first come, open play. Just show up and pay 200 pesos per player." data-es="No. Es por orden de llegada, juego abierto. Solo llega y paga 200 pesos por persona.">No. It is first come, open play. Just show up and pay 200 pesos per player.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q" data-en="How much does it cost?" data-es="¿Cuánto cuesta?">How much does it cost?</summary>
+        <div class="faq__a"><p data-en="200 pesos per player for the whole day. No hourly rates and no tiers." data-es="200 pesos por persona por todo el día. Sin tarifas por hora y sin niveles.">200 pesos per player for the whole day. No hourly rates and no tiers.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q" data-en="Do I need to bring my own paddle?" data-es="¿Tengo que traer mi propia pala?">Do I need to bring my own paddle?</summary>
+        <div class="faq__a"><p data-en="Yes. Bring your own paddle and ball. There are no rentals on site, so come ready to play." data-es="Sí. Trae tu propia pala y pelota. No hay renta en el lugar, así que ven listo para jugar.">Yes. Bring your own paddle and ball. There are no rentals on site, so come ready to play.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q" data-en="How many courts are there?" data-es="¿Cuántas canchas hay?">How many courts are there?</summary>
+        <div class="faq__a"><p data-en="Four dedicated pickleball courts, plus a volleyball court." data-es="Cuatro canchas de pickleball, más una cancha de voleibol.">Four dedicated pickleball courts, plus a volleyball court.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q" data-en="Can I play at night?" data-es="¿Puedo jugar de noche?">Can I play at night?</summary>
+        <div class="faq__a"><p data-en="Yes. Every court is lit, so you can play after dark. Stay for the sunset and keep going." data-es="Sí. Cada cancha tiene luces, así que puedes jugar de noche. Quédate para el atardecer y sigue jugando.">Yes. Every court is lit, so you can play after dark. Stay for the sunset and keep going.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q" data-en="Is it open to the public and visitors?" data-es="¿Está abierto al público y a visitantes?">Is it open to the public and visitors?</summary>
+        <div class="faq__a"><p data-en="Yes, everyone is welcome. Locals and visitors, all skill levels." data-es="Sí, todos son bienvenidos. Locales y visitantes, de todos los niveles.">Yes, everyone is welcome. Locals and visitors, all skill levels.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q" data-en="Where exactly are you?" data-es="¿Dónde están exactamente?">Where exactly are you?</summary>
+        <div class="faq__a"><p data-en="Calle Luis Encinas Johnson 439, Ferrocarrilera, Puerto Penasco. See the map above for directions." data-es="Calle Luis Encinas Johnson 439, Ferrocarrilera, Puerto Peñasco. Mira el mapa de arriba para llegar.">Calle Luis Encinas Johnson 439, Ferrocarrilera, Puerto Penasco. See the map above for directions.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q" data-en="Lessons, clinics, or leagues?" data-es="¿Clases, clínicas o ligas?">Lessons, clinics, or leagues?</summary>
+        <div class="faq__a"><p data-en="Open play is the main thing right now. Message us if you are interested in lessons, leagues, or group play." data-es="Por ahora lo principal es el juego abierto. Escríbenos si te interesan clases, ligas o juego en grupo.">Open play is the main thing right now. Message us if you are interested in lessons, leagues, or group play.</p></div>
+      </details>
+    </div>
+  </div>
+  <div class="divider" aria-hidden="true"><span class="court-line"></span></div>
+</section>
+
+<!-- ===================== 07 Contact ===================== -->
+<section class="section section--green-grad" id="contact">
+  <span class="section__num" aria-hidden="true">07</span>
+  <div class="wrap">
+    <div class="section__head rise" style="text-align:center;margin-left:auto;margin-right:auto;">
+      <span class="overline" data-en="Contact" data-es="Contacto">Contact</span>
+      <h2 data-en="Questions? Hit us up." data-es="¿Dudas? Escríbenos.">Questions? Hit us up.</h2>
+    </div>
+
+    <div class="contact__card rise" id="contactCard">
+      <div class="contact__head">
+        <h2 data-en="Send a message" data-es="Envía un mensaje">Send a message</h2>
+        <p class="sub" data-en="Ask about open play, group visits, or anything else. We reply by email." data-es="Pregunta sobre juego abierto, visitas en grupo o lo que sea. Respondemos por correo.">Ask about open play, group visits, or anything else. We reply by email.</p>
+      </div>
+      <div class="contact__body">
+        <!-- Native action posts to the standard endpoint as a no-JS fallback; JS intercepts and posts to /ajax/. -->
+        <form id="contactForm" action="https://formsubmit.co/becca@neonframewebdesign.com" method="POST" novalidate>
+          <div class="form-grid">
+            <div class="field field--full">
+              <label for="cName" data-en="Name" data-es="Nombre">Name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="cName" name="Name/Nombre" autocomplete="name" required>
+              <span class="field__error" data-en="Please enter your name." data-es="Escribe tu nombre.">Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label for="cEmail" data-en="Email" data-es="Correo">Email</label>
+              <input type="email" id="cEmail" name="Email/Correo" autocomplete="email" inputmode="email">
+              <span class="field__error" data-en="Check your email address." data-es="Revisa tu correo.">Check your email address.</span>
+            </div>
+            <div class="field">
+              <label for="cPhone" data-en="Phone or WhatsApp" data-es="Teléfono o WhatsApp">Phone or WhatsApp</label>
+              <input type="tel" id="cPhone" name="Phone/Telefono" autocomplete="tel" inputmode="tel">
+              <span class="field__error" id="cContactErr" data-en="Add a phone or an email so we can reply." data-es="Agrega un teléfono o correo para responderte.">Add a phone or an email so we can reply.</span>
+            </div>
+            <div class="field field--full">
+              <label for="cTopic" data-en="What is this about?" data-es="¿Sobre qué es?">What is this about?</label>
+              <select id="cTopic" name="Topic/Tema">
+                <option value="General question" data-en="General question" data-es="Pregunta general">General question</option>
+                <option value="Open play and hours" data-en="Open play and hours" data-es="Juego abierto y horario">Open play and hours</option>
+                <option value="Group or event" data-en="Group or event" data-es="Grupo o evento">Group or event</option>
+                <option value="Lessons or leagues" data-en="Lessons or leagues" data-es="Clases o ligas">Lessons or leagues</option>
+                <option value="Other" data-en="Other" data-es="Otro">Other</option>
+              </select>
+            </div>
+            <div class="field field--full">
+              <label for="cMessage" data-en="Message" data-es="Mensaje"><span data-en="Message" data-es="Mensaje">Message</span> <span class="opt" data-en="(optional)" data-es="(opcional)">(optional)</span></label>
+              <textarea id="cMessage" name="Message/Mensaje" data-placeholder-en="Tell us what you need..." data-placeholder-es="Cuéntanos qué necesitas..."></textarea>
+            </div>
+          </div>
+
+          <!-- FormSubmit config (JS overrides _cc/_replyto/_autoresponse dynamically; these cover the no-JS path) -->
+          <input type="hidden" name="_subject" value="Pickleball Rocky Point, nueva consulta">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <!-- honeypot -->
+          <input class="hp-field" type="text" id="cWebsite" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="form-submit">
+            <button class="btn btn--orange" type="submit" id="contactSubmit"><span class="btn-label" data-en="Send message" data-es="Enviar mensaje">Send message</span></button>
+          </div>
+          <p class="form-reassure" data-en="We reply by email, usually within a day." data-es="Respondemos por correo, normalmente en un día.">We reply by email, usually within a day.</p>
+
+          <div class="form-error-notice" id="contactError" role="alert">
+            <p class="form-error__msg" data-en="Something went wrong sending that. You can email us directly instead:" data-es="Algo salió mal al enviar. Puedes escribirnos directo:">Something went wrong sending that. You can email us directly instead:</p>
+            <div class="form-error__buttons">
+              <a class="btn form-error__btn wa" id="contactErrWhatsapp" href="#" target="_blank" rel="noopener" hidden>WhatsApp</a>
+              <a class="btn form-error__btn ml" id="contactErrMailto" href="#" data-en="Email us" data-es="Enviar correo">Email us</a>
+              <button class="btn form-error__btn retry" type="button" id="contactErrRetry" data-en="Try again" data-es="Reintentar">Try again</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="contact__success" id="contactSuccess" role="status" aria-live="polite">
+        <div class="success-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <p class="sx-title" data-en="Message sent!" data-es="¡Mensaje enviado!">Message sent!</p>
+        <p class="sx-body" id="contactSuccessBody" data-en="Thanks! We got your message and will reply soon. See you on the courts." data-es="¡Gracias! Recibimos tu mensaje y te respondemos pronto. Nos vemos en las canchas.">Thanks! We got your message and will reply soon. See you on the courts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== Footer ===================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <a href="#top" aria-label="Pickleball Rocky Point, home"><img src="assets/logo.webp" width="560" height="501" loading="lazy" alt="Pickleball Rocky Point logo"></a>
+        <p data-en="Four pickleball courts plus volleyball in Puerto Penasco, Rocky Point. 200 pesos per player, all day, day or night." data-es="Cuatro canchas de pickleball y voleibol en Puerto Peñasco, Rocky Point. 200 pesos por persona, todo el día, de día o de noche.">Four pickleball courts plus volleyball in Puerto Penasco, Rocky Point. 200 pesos per player, all day, day or night.</p>
+        <p class="foot__signoff" data-en="See you on the courts." data-es="Nos vemos en las canchas.">See you on the courts.</p>
+      </div>
+      <div class="foot__col">
+        <h4 data-en="Explore" data-es="Explora">Explore</h4>
+        <ul>
+          <li><a href="#how" data-en="How It Works" data-es="Cómo Funciona">How It Works</a></li>
+          <li><a href="#courts" data-en="The Courts" data-es="Las Canchas">The Courts</a></li>
+          <li><a href="#pricing" data-en="Pricing" data-es="Precio">Pricing</a></li>
+          <li><a href="gallery.html" data-en="Gallery" data-es="Galería">Gallery</a></li>
+          <li><a href="#faq" data-en="FAQ" data-es="Preguntas">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="foot__col">
+        <h4 data-en="Visit" data-es="Visítanos">Visit</h4>
+        <ul>
+          <li data-en="Calle Luis Encinas Johnson 439, Ferrocarrilera, 83555 Puerto Penasco, Sonora" data-es="Calle Luis Encinas Johnson 439, Ferrocarrilera, 83555 Puerto Peñasco, Sonora">Calle Luis Encinas Johnson 439, Ferrocarrilera, 83555 Puerto Penasco, Sonora</li>
+          <li data-en="Open daily, day and night" data-es="Abierto diario, día y noche">Open daily, day and night</li>
+          <li><a href="#contact" data-en="Message us" data-es="Escríbenos">Message us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <span>&copy; <span id="year">2026</span> Pickleball Rocky Point</span>
+      <span><span data-en="Site by " data-es="Sitio por ">Site by </span><a href="https://neonframewebdesign.com" target="_blank" rel="noopener">NeonFrame Web Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile pinned action bar (below ~900px) -->
+<div class="mobile-bar" aria-label="Quick actions">
+  <a class="btn btn--orange" href="#visit" data-en="Get Directions" data-es="Cómo Llegar">Get Directions</a>
+  <a class="icon-btn" href="#contact" aria-label="Message us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  </a>
+</div>
+
+<!-- ===================== JSON-LD: LocalBusiness / SportsActivityLocation ===================== -->
+<!-- openingHoursSpecification: exact times TBD with owner; lights confirm night play, so a
+     representative 09:00-22:00 daily is used as an approximation until confirmed. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "SportsActivityLocation"],
+  "@id": "https://neonframewebdev.github.io/pickleball-rocky-point/#business",
+  "name": "Pickleball Rocky Point",
+  "description": "Pickleball in Puerto Penasco (Rocky Point), Sonora, Mexico. Four pickleball courts plus a volleyball court. Pay 200 pesos per player and play all day, day or night under the lights. Open play, no reservation needed.",
+  "url": "https://neonframewebdev.github.io/pickleball-rocky-point/",
+  "logo": "https://neonframewebdev.github.io/pickleball-rocky-point/apple-touch-icon.png",
+  "image": [
+    "https://neonframewebdev.github.io/pickleball-rocky-point/assets/og-image.jpg",
+    "https://neonframewebdev.github.io/pickleball-rocky-point/assets/courts_sails.webp",
+    "https://neonframewebdev.github.io/pickleball-rocky-point/assets/court_mural.webp"
+  ],
+  "priceRange": "$",
+  "currenciesAccepted": "MXN",
+  "slogan": "Pop. Rally. Repeat.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Luis Encinas Johnson 439, Ferrocarrilera",
+    "addressLocality": "Puerto Peñasco",
+    "addressRegion": "Sonora",
+    "postalCode": "83555",
+    "addressCountry": "MX"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Puerto Penasco"},
+    {"@type": "City", "name": "Rocky Point"}
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "22:00"
+    }
+  ],
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "All-day pickleball day pass",
+    "price": "200.00",
+    "priceCurrency": "MXN",
+    "description": "Per player, all-day access to the pickleball courts. Day or night.",
+    "itemOffered": {"@type": "Service", "name": "All-day pickleball court access"}
+  },
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "Floodlit courts for night play", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Shade sails", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Restrooms", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Parking", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Volleyball court", "value": true}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Pickleball Rocky Point",
+  "url": "https://neonframewebdev.github.io/pickleball-rocky-point/",
+  "inLanguage": ["en", "es"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Do I need to book or reserve?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is first come, open play. Just show up and pay 200 pesos per player."}},
+    {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "200 pesos per player for the whole day. No hourly rates and no tiers."}},
+    {"@type": "Question", "name": "Do I need to bring my own paddle?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Bring your own paddle and ball. There are no rentals on site."}},
+    {"@type": "Question", "name": "How many courts are there?", "acceptedAnswer": {"@type": "Answer", "text": "Four dedicated pickleball courts, plus a volleyball court."}},
+    {"@type": "Question", "name": "Can I play at night?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every court is lit, so you can play after dark."}},
+    {"@type": "Question", "name": "Is it open to the public and visitors?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, everyone is welcome. Locals and visitors, all skill levels."}},
+    {"@type": "Question", "name": "Where exactly are you?", "acceptedAnswer": {"@type": "Answer", "text": "Calle Luis Encinas Johnson 439, Ferrocarrilera, Puerto Penasco, Sonora."}},
+    {"@type": "Question", "name": "Do you offer lessons, clinics, or leagues?", "acceptedAnswer": {"@type": "Answer", "text": "Open play is the main thing right now. Message us about lessons, leagues, or group play."}}
+  ]
+}
+</script>
+
+<!-- GSAP + ScrollTrigger (CDN, deferred) then the site module -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
