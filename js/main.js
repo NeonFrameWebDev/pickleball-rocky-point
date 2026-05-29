@@ -74,8 +74,8 @@
     var meta = document.getElementById('metaDescription');
     if (meta) {
       meta.setAttribute('content', lang === 'es'
-        ? 'Canchas de pickleball en Puerto Peñasco (Rocky Point). 4 canchas y una de voleibol. Paga 200 pesos por persona y juega todo el día, de día o de noche con luces. Solo llega, sin reservar.'
-        : 'Pickleball courts in Puerto Penasco (Rocky Point). 4 courts plus a volleyball court. Pay 200 pesos per player and play all day, day or night under the lights. Just show up, no booking.');
+        ? 'Canchas de pickleball en Puerto Peñasco (Rocky Point). 4 canchas y una de voleibol. Paga 100 pesos por persona y juega todo el día, de día o de noche con luces. Solo llega, sin reservar.'
+        : 'Pickleball courts in Puerto Penasco (Rocky Point). 4 courts plus a volleyball court. Pay 100 pesos per player and play all day, day or night under the lights. Just show up, no booking.');
     }
     document.documentElement.lang = lang;
     safeStorageSet('localStorage', I18N_KEY, lang);
@@ -412,8 +412,8 @@
       var summaryES = buildInquirySummary(data, 'es');
       var summaryCustomer = buildInquirySummary(data, currentLang);
       var autoresponse = currentLang === 'es'
-        ? ('Hola ' + (data.name || '') + ',\n\nRecibimos tu mensaje en Pickleball Rocky Point. Te respondemos pronto. Recuerda: 4 canchas, 200 pesos por persona, todo el día, de día o de noche. Solo llega.\n\nPickleball Rocky Point')
-        : ('Hi ' + (data.name || '') + ',\n\nWe got your message at Pickleball Rocky Point. We will get back to you soon. Remember: 4 courts, 200 pesos per player, all day, day or night. Just show up.\n\nPickleball Rocky Point');
+        ? ('Hola ' + (data.name || '') + ',\n\nRecibimos tu mensaje en Pickleball Rocky Point. Te respondemos pronto. Recuerda: 4 canchas, 100 pesos por persona, todo el día, de día o de noche. Solo llega.\n\nPickleball Rocky Point')
+        : ('Hi ' + (data.name || '') + ',\n\nWe got your message at Pickleball Rocky Point. We will get back to you soon. Remember: 4 courts, 100 pesos per player, all day, day or night. Just show up.\n\nPickleball Rocky Point');
 
       var fd = new FormData();
       fd.append('Name/Nombre', data.name);
