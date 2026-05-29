@@ -259,9 +259,12 @@ strong { font-weight: 600; }
    Hero
    ========================================================================== */
 .hero {
-  position: relative; min-height: 100svh; display: flex; align-items: flex-end;
+  position: relative; min-height: 100svh; display: flex; align-items: flex-start;
   overflow: hidden; background: var(--green-deep);
-  padding-bottom: clamp(3.5rem, 9vh, 6rem);
+  /* Top-align with nav clearance so the kicker never rides up under the fixed nav logo,
+     even when the hero copy is taller than a short viewport. */
+  padding-top: calc(var(--nav-h) + 1.5rem);
+  padding-bottom: clamp(3rem, 8vh, 5rem);
 }
 /* HERO PHOTO SWAP POINT:
    Currently uses the real wide court shot under the shade sails with the octopus mural.
@@ -302,7 +305,7 @@ strong { font-weight: 600; }
 }
 .hero .wrap { position: relative; z-index: 4; }
 @media (min-width: 900px) {
-  .hero { align-items: center; padding-bottom: 0; }
+  .hero { align-items: flex-start; padding-top: calc(var(--nav-h) + clamp(1.5rem, 5vh, 3rem)); padding-bottom: clamp(2.5rem, 7vh, 4.5rem); }
   .hero .wrap { max-width: clamp(460px, 44vw, 600px); margin-left: var(--gutter); margin-right: auto; padding-left: 0; }
   .hero__title { line-height: 1.0; }
 }
